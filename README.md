@@ -37,4 +37,7 @@ O webdriver é que executa a ação no navegador.
 
         pip show selenium
 
+    
     **NÃO FOI NECESSÁRIA A INSTALAÇÃO DO WEBDRIVER**
+
+    ![primeiro_teste](/imagens/primeiro_teste.png)
