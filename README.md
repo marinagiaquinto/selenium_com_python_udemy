@@ -23,7 +23,7 @@ O webdriver é que executa a ação no navegador.
 
         python -m venv venv
 
-(o segundo venv é o nome dado ao ambiente virtual)
+    (o segundo venv é o nome dado ao ambiente virtual)
 
 4. Ativar o ambiente virtual
 
