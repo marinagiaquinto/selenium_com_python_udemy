@@ -40,4 +40,6 @@ O webdriver é que executa a ação no navegador.
     
     **NÃO FOI NECESSÁRIA A INSTALAÇÃO DO WEBDRIVER**
 
+    Atualmente, bibliotecas como webdriver-manager (para Python, por exemplo) automatizam esse processo. Elas verificam a versão do seu navegador, baixam o webdriver compatível e o configuram para você, eliminando a necessidade de gerenciamento manual.
+
     ![primeiro_teste](/imagens/primeiro_teste.png)
