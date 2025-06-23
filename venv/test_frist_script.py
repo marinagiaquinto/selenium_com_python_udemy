@@ -4,4 +4,4 @@ import time
 browser = webdriver.Chrome()
 
 browser.get('https://google.com')
-time.sleep(15)
+time.sleep(3)

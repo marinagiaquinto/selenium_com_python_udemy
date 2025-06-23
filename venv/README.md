@@ -43,3 +43,23 @@ O webdriver é que executa a ação no navegador.
     Atualmente, bibliotecas como webdriver-manager (para Python, por exemplo) automatizam esse processo. Elas verificam a versão do seu navegador, baixam o webdriver compatível e o configuram para você, eliminando a necessidade de gerenciamento manual.
 
     ![primeiro_teste](/imagens/primeiro_teste.png)
+
+
+## XPATH
+
+Contains (contén parte do texto)
+
+![contains](/imagens/contains.png)
+
+And, or e | (ou)
+
+![and](/imagens/and.png)
+
+Text = (texto exato)
+
+![text=](/imagens/text=.png)
+
+O "irmão" seguinte (quando quiser ir para a próxima tag, "descendo" a que está)
+
+![sibling1](sibling1.png)
+![sibling2](sibling2.png)
