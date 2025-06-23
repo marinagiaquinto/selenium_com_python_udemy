@@ -61,5 +61,5 @@ Text = (texto exato)
 
 O "irmão" seguinte (quando quiser ir para a próxima tag, "descendo" a que está)
 
-![sibling1](sibling1.png)
-![sibling2](sibling2.png)
+![sibling1](/imagens/sibling1.png)
+![sibling2](/imagens/sibling2.png)
