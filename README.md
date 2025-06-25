@@ -59,7 +59,34 @@ Text = (texto exato)
 
 ![text=](/imagens/text=.png)
 
-O "irmão" seguinte (quando quiser ir para a próxima tag, "descendo" a que está)
+O "irmão" seguinte (quando quiser ir para a próxima tag, "descendo" no mesmo nível em que já está)
 
 ![sibling1](/imagens/sibling1.png)
 ![sibling2](/imagens/sibling2.png)
+
+Obs: "::" seguido pela tag que quer chegar
+
+## Pytest
+
+![pytest_beneficios](/imagens/pytest_beneficios.png)
+![pytest_nomeacao](/imagens/pytest_nomeacao.png)
+
+
+1. Com a VENV ATIVA, instalar o pytest
+2. Criar um arquivo "conftest.py" na raíz do projeto
+3. Preencher o arquivo com a configuração de base para execução dos testes: 
+   - código comum anterior a execução do teste
+   - returm para execução do teste
+   - fechar o navegador
+   ![conftest](/imagens/conftest.png)
+4. nos arquivos de teste
+   - importar o drive do conftest
+   - criar a classe definidora do teste e o método.
+    ![confitest_arq_test](/imagens/confitest_arq_test.png)
+5. importe o pytest e o uso da fixture
+
+## PageObeject
+
+Padrão de projeto que visa separar o código por páginas criando funções para possibilitar a reutilização do código. 
+
+![PageObeject](/imagens/pageObeject.png)
