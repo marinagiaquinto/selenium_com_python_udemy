@@ -1,6 +1,7 @@
 from selenium.webdriver.common.by import By
 import conftest
 import pytest
+from pages.login_page import LoginPage
 
 @pytest.mark.usefixtures("setup_teardown")
 class TestCT02:
@@ -14,9 +15,8 @@ class TestCT02:
         browser = conftest.browser
 
         # Login
-        browser.find_element(By.ID, 'user-name').send_keys('standard_user')
-        browser.find_element(By.ID, 'password').send_keys('secret_sauce')
-        browser.find_element(By.ID, 'login-button').click()
+        login_page = LoginPage()
+        login_page.fazer_login('standard_user', 'secret_sauce')
         name_title = browser.find_element(By.CSS_SELECTOR, 'span[data-test="title"]')
         name_title.is_displayed()
 

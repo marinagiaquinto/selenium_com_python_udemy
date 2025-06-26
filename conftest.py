@@ -15,7 +15,7 @@ def setup_teardown():
     browser.get('https://www.saucedemo.com/')
     
     # run test - como um return. Para de executar esse código, vai pra execução do teste e depois retorna
-    yield
+    yield browser
 
     # teardown
     browser.quit()

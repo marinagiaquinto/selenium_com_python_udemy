@@ -1,6 +1,7 @@
 from selenium.webdriver.common.by import By
 import conftest
 import pytest
+from pages.login_page import LoginPage
 
 @pytest.mark.usefixtures("setup_teardown")
 class TestCT05:
@@ -11,9 +12,8 @@ class TestCT05:
         # Cenário 5 
         # Login com senha inválida
 
-        browser.find_element(By.ID, 'user-name').send_keys('standard_user')
-        browser.find_element(By.ID, 'password').send_keys('xxx')
-        browser.find_element(By.ID, 'login-button').click()
+        login_page = LoginPage()
+        login_page.fazer_login('standard_user', 'xxxxx')
 
         browser.find_element(By.CSS_SELECTOR, '[class="error-message-container error"]').is_displayed()
         assert browser.find_element(By.CSS_SELECTOR, '[class="error-message-container error"]').text == "Epic sadface: Username and password do not match any user in this service"
