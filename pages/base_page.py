@@ -18,5 +18,5 @@ class BasePage:
     def verificar_se_elemento_existe(self, locator):
         assert self.encontrar_elemento(locator).is_displayed(), f'O elemento {locator} não foi encontrado na tela'
 
-    def verificar_se_elemento_esta_visivel(self, locator):
-        assert self.encontrar_elemento(self.titulo_pagina).text == 'Products', 'Título da pág diferente de "Products"'
+    def verificar_texto_esperado(self, locator, text):
+        assert self.encontrar_elemento(locator).text == text, f'Texto {self.encontrar_elemento(locator).text} do locator {locator} é diferente do esperado: {text}'

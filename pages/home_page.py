@@ -11,4 +11,4 @@ class HomePage(BasePage):
     def verificar_login_com_sucesso(self):
 
         self.verificar_se_elemento_existe(self.titulo_pagina)
-        self.verificar_se_elemento_esta_visivel(self.titulo_pagina)
+        self.verificar_texto_esperado(self.titulo_pagina, 'Products')

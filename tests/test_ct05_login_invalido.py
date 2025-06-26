@@ -1,5 +1,3 @@
-from selenium.webdriver.common.by import By
-import conftest
 import pytest
 from pages.login_page import LoginPage
 
@@ -7,16 +5,14 @@ from pages.login_page import LoginPage
 class TestCT05:
     def test_ct05_login_invalido(self):
 
-        browser = conftest.browser
-
         # Cenário 5 
         # Login com senha inválida
 
         login_page = LoginPage()
         login_page.fazer_login('standard_user', 'xxxxx')
-
-        browser.find_element(By.CSS_SELECTOR, '[class="error-message-container error"]').is_displayed()
-        assert browser.find_element(By.CSS_SELECTOR, '[class="error-message-container error"]').text == "Epic sadface: Username and password do not match any user in this service"
+        login_page.verificar_mensagem_de_erro()
+        #browser.find_element(By.CSS_SELECTOR, '[class="error-message-container error"]').is_displayed()
+        #assert browser.find_element(By.CSS_SELECTOR, '[class="error-message-container error"]').text == "Epic sadface: Username and password do not match any user in this service"
 
 
 

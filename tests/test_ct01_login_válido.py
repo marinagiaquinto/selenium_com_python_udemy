@@ -1,5 +1,4 @@
-from selenium.webdriver.common.by import By
-import conftest
+
 import pytest
 from pages.home_page import HomePage
 from pages.login_page import LoginPage
@@ -11,9 +10,6 @@ class TestCT01:
         # Cenário 1 
         # Login com usuário e senha válidos
         # Verificar se foi para a pág de Products
-
-        browser = conftest.browser
-
 
         #instanciar a LoginPage criando um objeto dela. Como uma cópia dela pra ser utilizada aqui.
         login_page = LoginPage()
