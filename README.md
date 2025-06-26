@@ -76,7 +76,7 @@ Obs: "::" seguido pela tag que quer chegar
 2. Criar um arquivo "conftest.py" na raíz do projeto
 3. Preencher o arquivo com a configuração de base para execução dos testes: 
    - código comum anterior a execução do teste
-   - returm para execução do teste
+   - return para execução do teste
    - fechar o navegador
    ![conftest](/imagens/conftest.png)
 4. nos arquivos de teste
@@ -84,9 +84,17 @@ Obs: "::" seguido pela tag que quer chegar
    - criar a classe definidora do teste e o método.
     ![confitest_arq_test](/imagens/confitest_arq_test.png)
 5. importe o pytest e o uso da fixture
+6. ATENÇÃO:
+   - TODOS os arquivos de teste devem iniciar com "test_"
+   - a pasta de teste deve se chamar "tests" ou "testes"
+   - todas as pastas abertas devem conter um __init__.py vazio. Ele ajuda o Python a reconhecer a pasta como um módulo.
+   - os testes "pytest" devem ser executados na RAIZ do projeto com a VENV ATIVA
 
 ## PageObeject
 
 Padrão de projeto que visa separar o código por páginas criando funções para possibilitar a reutilização do código. 
 
 ![PageObeject](/imagens/pageObeject.png)
+
+- Criar uma pasta "pages" aonde vai se concentrar as classes de cada pág
+- Criar arquivos que ajudem na reutilização do código
