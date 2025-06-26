@@ -1,6 +1,7 @@
 from selenium.webdriver.common.by import By
 import conftest
 import pytest
+from pages.home_page import HomePage
 from pages.login_page import LoginPage
 
 @pytest.mark.usefixtures("setup_teardown")
@@ -18,6 +19,7 @@ class TestCT01:
         login_page = LoginPage()
         login_page.fazer_login('standard_user', 'secret_sauce')
 
-        browser.find_element(By.CSS_SELECTOR, 'span[data-test="title"]').is_displayed()
-        assert browser.find_element(By.CSS_SELECTOR, 'span[data-test="title"]').text == 'Products', 'Título da pág diferente de "Products"'
+        home_page = HomePage()
+        home_page.verificar_login_com_sucesso()
+        
 

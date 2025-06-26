@@ -13,4 +13,10 @@ class BasePage:
         return self.encontrar_elemento(locator).send_keys(text)
     
     def clicar(self, locator):
-        return self.encontrar_elemento(locator).click()
+        self.encontrar_elemento(locator).click()
+    
+    def verificar_se_elemento_existe(self, locator):
+        assert self.encontrar_elemento(locator).is_displayed(), f'O elemento {locator} não foi encontrado na tela'
+
+    def verificar_se_elemento_esta_visivel(self, locator):
+        assert self.encontrar_elemento(self.titulo_pagina).text == 'Products', 'Título da pág diferente de "Products"'

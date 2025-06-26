@@ -10,7 +10,6 @@ class LoginPage(BasePage):
         self.password_field = (By.ID, 'password')
         self.login_button = (By.ID, 'login-button')
 
-
     def fazer_login(self, usuario, senha): #por a função estar dentro da classe, ela precisa do self, por padrão do python.
         self.escrever(self.username_field, usuario) # se não for usar essa abstração, direto com o find_element precisa usar o * para desempacotar a tupla do locator. ex: *self.username_field
         self.escrever(self.password_field, senha)
