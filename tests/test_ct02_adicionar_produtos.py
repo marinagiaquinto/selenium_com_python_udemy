@@ -1,6 +1,7 @@
 from selenium.webdriver.common.by import By
 import conftest
 import pytest
+from pages.home_page import HomePage
 from pages.login_page import LoginPage
 
 @pytest.mark.usefixtures("setup_teardown")
@@ -13,21 +14,15 @@ class TestCT02:
         # Voltar e adicionar mais um produto
 
         browser = conftest.browser
+        login_page = LoginPage()
+        home_page = HomePage()
 
         # Login
-        login_page = LoginPage()
         login_page.fazer_login('standard_user', 'secret_sauce')
-        name_title = browser.find_element(By.CSS_SELECTOR, 'span[data-test="title"]')
-        name_title.is_displayed()
+
 
         # Add produto 1 no carrinho
-        browser.find_element(By.XPATH, '(//div[@data-test="inventory-item-name"])[1]').click()
-        browser.find_element(By.XPATH, '(//div[@data-test="inventory-item-name"])[1]').is_displayed() 
-
-        button_add_produto_1 = browser.find_element(By.ID, 'add-to-cart')
-        button_add_produto_1.is_displayed()
-        assert button_add_produto_1.text == 'Add to cart', 'Texto do botão prod 1 diferente de "Add to cart"'
-        button_add_produto_1.click()
+        home_page.adicionar_ao_carrinho(1)
 
         browser.find_element(By.ID, 'remove').is_displayed()
         assert browser.find_element(By.ID, 'remove').text == 'Remove' , 'Texto do botão prod 1 diferente de "Remover"'
