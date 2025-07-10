@@ -19,4 +19,4 @@ class LoginPage(BasePage):
     def verificar_mensagem_de_erro(self):
         self.verificar_se_elemento_existe(self.mensagem_erro)
         self.verificar_texto_esperado(self.mensagem_erro, "Epic sadface: Username and password do not match any user in this service")
-
+        
