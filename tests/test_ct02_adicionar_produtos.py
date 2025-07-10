@@ -3,6 +3,7 @@ import conftest
 import pytest
 from pages.home_page import HomePage
 from pages.login_page import LoginPage
+from pages.base_page import BasePage
 
 @pytest.mark.usefixtures("setup_teardown")
 class TestCT02:
@@ -16,16 +17,17 @@ class TestCT02:
         browser = conftest.browser
         login_page = LoginPage()
         home_page = HomePage()
+        base_pag = BasePage()
 
         # Login
         login_page.fazer_login('standard_user', 'secret_sauce')
 
 
         # Add produto 1 no carrinho
-        home_page.adicionar_ao_carrinho(1)
-
-        browser.find_element(By.ID, 'remove').is_displayed()
-        assert browser.find_element(By.ID, 'remove').text == 'Remove' , 'Texto do botão prod 1 diferente de "Remover"'
+        home_page.adicionar_ao_carrinho_pag_item('Sauce Labs Backpack')
+        base_pag.verificar_texto_esperado((By.ID, 'remove'), 'Remove')
+        #browser.find_element(By.ID, 'remove').is_displayed()
+        #assert browser.find_element(By.ID, 'remove').text == 'Remove' , 'Texto do botão prod 1 diferente de "Remover"'
 
         qtd_itens_carrinho = browser.find_element(By.CSS_SELECTOR, '[data-test="shopping-cart-badge"]')
         assert qtd_itens_carrinho.text == '1' , 'Qtd de itens no carrinho diferente de 1'
