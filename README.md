@@ -88,7 +88,7 @@ Obs: "::" seguido pela tag que quer chegar
    - TODOS os arquivos de teste devem iniciar com "test_"
    - a pasta de teste deve se chamar "tests" ou "testes"
    - todas as pastas abertas devem conter um __init__.py vazio. Ele ajuda o Python a reconhecer a pasta como um módulo.
-   - os testes "pytest" devem ser executados na RAIZ do projeto com a VENV ATIVA
+   - os testes "pytest" devem ser executados na RAIZ do projeto com a VENV ATIVA (source venv/bin/activate)
 
 ## PageObeject
 

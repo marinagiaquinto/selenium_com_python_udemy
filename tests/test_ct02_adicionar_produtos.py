@@ -14,12 +14,9 @@ class TestCT02:
         # Adicionar um produto ao carrinho e verificar que foi adicionado corretamente. 
         # Voltar e adicionar mais um produto
 
-        browser = conftest.browser
         login_page = LoginPage()
         home_page = HomePage()
-        base_pag = BasePage()
-
-        browser.implicitly_wait(30)
+        base_page = BasePage()
 
         # Login
         login_page.fazer_login('standard_user', 'secret_sauce')
@@ -27,7 +24,7 @@ class TestCT02:
 
         # Add produto 1 no carrinho
         home_page.adicionar_ao_carrinho_pag_item('Sauce Labs Backpack')
-        base_pag.verificar_texto_esperado((By.ID, 'remove'), 'Remove')
+        base_page.verificar_texto_esperado((By.ID, 'remove'), 'Remove')
         home_page.qtd_itens_carrinho('1')
 
         #retornando a tela principal
@@ -36,7 +33,7 @@ class TestCT02:
 
         # adicionando o produto 2
         home_page.adicionar_ao_carrinho_pag_item('Sauce Labs Bike Light')     
-        base_pag.verificar_texto_esperado((By.ID, 'remove'), 'Remove')
+        base_page.verificar_texto_esperado((By.ID, 'remove'), 'Remove')
         home_page.qtd_itens_carrinho('2')
 
         #retornando a tela principal

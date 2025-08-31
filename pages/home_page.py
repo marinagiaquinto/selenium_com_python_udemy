@@ -6,17 +6,19 @@ class HomePage(BasePage):
 
     def __init__(self):
         self.browser = conftest.browser
-        self.titulo_pagina = (By.CSS_SELECTOR, 'span[data-test="title"]')
+        self.titulo_pagina_produto = (By.CSS_SELECTOR, 'span[data-test="title"]')
         self.item_inventario_pag_principal = (By.XPATH, '//div[@data-test="inventory-item-name" and text()="{}"]')
         self.button_adicinar_carrinho_pag_item = (By.ID, 'add-to-cart')
         self.itens_carrinho = (By.CSS_SELECTOR, '[data-test="shopping-cart-badge"]')
         self.button_remover_item_inventario_pag_principal = (By.XPATH, '//button[@id="remove-{}"]')
         self.button_retorno_pag_principal = (By.ID, 'back-to-products')
+        self.button_adicionar_item_inventario_pag_principal = (By.XPATH, '//button[@id="add-to-cart-{}"]')
+        self.icone_carrinho = (By.XPATH, '//*[@class="shopping_cart_link"]')
 
     def verificar_login_com_sucesso(self):
 
-        self.verificar_se_elemento_existe(self.titulo_pagina)
-        self.verificar_texto_esperado(self.titulo_pagina, 'Products')
+        self.verificar_se_elemento_existe(self.titulo_pagina_produto)
+        self.verificar_texto_esperado(self.titulo_pagina_produto, 'Products')
 
     def adicionar_ao_carrinho_pag_item(self, nome_item):
         #criar o mesmo localizador correspondente ao "item_inventario" só que de forma dinâmica
@@ -37,3 +39,10 @@ class HomePage(BasePage):
     def verificar_estado_botao_remover_pag_principal(self, id_item):
         item = (self.button_remover_item_inventario_pag_principal[0], self.button_remover_item_inventario_pag_principal[1].format(id_item))
         self.verificar_texto_esperado(item, 'Remove')
+
+    def adicionar_ao_carrinho_pag_principal(self, id_item):
+        item = (self.button_adicionar_item_inventario_pag_principal[0], self.button_adicionar_item_inventario_pag_principal[1].format(id_item))
+        self.clicar(item)
+
+    def entrar_no_carrinho(self):
+        self.clicar(self.icone_carrinho)

@@ -2,6 +2,8 @@
 import pytest
 from pages.home_page import HomePage
 from pages.login_page import LoginPage
+from pages.base_page import BasePage
+from selenium.webdriver.common.by import By
 
 @pytest.mark.usefixtures("setup_teardown")
 class TestCT01:
@@ -18,4 +20,3 @@ class TestCT01:
         home_page = HomePage()
         home_page.verificar_login_com_sucesso()
         
-
